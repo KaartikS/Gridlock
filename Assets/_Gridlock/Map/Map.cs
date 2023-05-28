@@ -18,6 +18,9 @@ namespace Gridlock
         [SerializeField]
         private int sizeZ;
 
+        private Dictionary<Vector2Int, Tile> tileByPosition = new();
+
+
         private void Start()
         {
             CreateMap();
@@ -28,7 +31,13 @@ namespace Gridlock
             {
                 for(int z = 0; z < sizeZ;z++)
                 {
-                    Tile tile = Instantiate(tilePrefab, new Vector3(x,0,z), Quaternion.identity, tilesContainer);
+                    Vector2Int position = new Vector2Int(x, z);
+
+                    Tile tile = Instantiate(tilePrefab, tilesContainer);
+                    tile.transform.localPosition = position.ToVector3();
+
+                    tileByPosition[position] = tile;
+
                     tile.gameObject.name = $"Tile ({x},{z})";
                 }
             }
