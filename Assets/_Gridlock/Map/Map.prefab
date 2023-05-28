@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e555a04a8d07a544f9c12da02d8436f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: -8109190771647355732, guid: 2d994e0ab8994634e8fe72f8599f81a4, type: 3}
-  tilesContainer: {fileID: 1611592900165409433}
+  prefab: {fileID: -8109190771647355732, guid: 2d994e0ab8994634e8fe72f8599f81a4, type: 3}
+  container: {fileID: 1611592900165409433}
   sizeX: 10
   sizeZ: 10

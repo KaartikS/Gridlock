@@ -4,14 +4,8 @@ using UnityEngine;
 
 namespace Gridlock
 {
-    public class Map : MonoBehaviour
+    public class Map : Factory<Tile>
     {
-        [SerializeField]
-        private Tile tilePrefab;
-
-        [SerializeField]
-        private Transform tilesContainer;
-
         [SerializeField]
         private int sizeX;
 
@@ -28,12 +22,11 @@ namespace Gridlock
             {
                 for(int z = 0; z < sizeZ;z++)
                 {
-                    Tile tile = Instantiate(tilePrefab, new Vector3(x,0,z), Quaternion.identity, tilesContainer);
+                    Tile tile = InstantiatePrefabAtPosition(x, z);
+
                     tile.gameObject.name = $"Tile ({x},{z})";
                 }
             }
         }
-
     }
-
 }
