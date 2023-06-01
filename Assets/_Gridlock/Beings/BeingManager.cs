@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Gridlock{
@@ -15,11 +16,15 @@ namespace Gridlock{
 
         private Dictionary<Vector2Int, Being> beingByPosition = new();
 
+        private List<Being> beingList = new();
+
+        private int currentBeingIndex;
+
 
         private void Start()
         {
             CreateBeing(playerPrefab, new Vector2Int(5,1));
-            CreateBeing(enemyPrefab, new Vector2Int(5, 8));
+            CreateBeing(enemyPrefab, new Vector2Int(5,8));
         }
         private void CreateBeing(Being beingPrefab, Vector2Int position)
         {
@@ -27,6 +32,14 @@ namespace Gridlock{
             beingInstance.transform.localPosition = position.ToVector3();
 
             beingByPosition[position] = beingInstance;
+            beingList.Add(beingInstance);
+        }
+
+        public Being GetNextBeing()
+        {
+            Being currentBeing = beingList[currentBeingIndex];
+            currentBeingIndex++;
+            return currentBeing;
         }
 
     }
