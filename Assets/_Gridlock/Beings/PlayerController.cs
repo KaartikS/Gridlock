@@ -7,7 +7,6 @@ namespace Gridlock
 {
     public class PlayerController : Being
     {
-
         [SerializeField]
         private PlayerMovement controls;
         private void Awake()

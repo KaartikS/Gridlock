@@ -9,10 +9,20 @@ namespace Gridlock
         [SerializeField]
         private float movementDuration = 0.5f;
 
+        private bool isMoving = false;
+
         [Button]
         public void Move(Vector2Int newInput)
         {
-            transform.DOLocalMove(transform.localPosition + newInput.ToVector3(), movementDuration);
+            if (isMoving)
+            {
+                return;
+            }
+
+            isMoving = true;
+
+            transform.DOLocalMove(transform.localPosition + newInput.ToVector3(), movementDuration)
+                .OnComplete(() => isMoving = false);
         }
     }
 }
