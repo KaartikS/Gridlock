@@ -77,5 +77,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6059794144372926735, guid: 190c816cb6c805443858670692a9c552, type: 3}
-  playerPrefab: {fileID: 1773450954803940749, guid: cd392a87ca5b86744b76be33efe153e6, type: 3}
+  playerPrefab: {fileID: 3430905521736486279, guid: cd392a87ca5b86744b76be33efe153e6, type: 3}
   beingContainer: {fileID: 2457729794223247525}

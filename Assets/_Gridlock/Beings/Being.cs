@@ -10,9 +10,9 @@ namespace Gridlock
         private float movementDuration = 0.5f;
 
         [Button]
-        public void Move(Vector2Int newPosition)
+        public void Move(Vector2Int newInput)
         {
-            transform.DOLocalMove(newPosition.ToVector3(), movementDuration);
+            transform.DOLocalMove(transform.localPosition + newInput.ToVector3(), movementDuration);
         }
     }
 }
