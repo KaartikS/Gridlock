@@ -7,7 +7,6 @@ namespace Gridlock
 {
     public class PlayerController : Being
     {
-        private Vector2 movementInput;
 
         [SerializeField]
         private PlayerMovement controls;
@@ -32,7 +31,7 @@ namespace Gridlock
         }
         void MovePlayer(Vector2 moveDirection)
         {
-            this.Move(Vector2Int.RoundToInt(movementInput));
+            this.Move(Vector2Int.RoundToInt(moveDirection));
         }
     }
 }
